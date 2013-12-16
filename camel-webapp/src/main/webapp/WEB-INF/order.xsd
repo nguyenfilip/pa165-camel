@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified"
+	targetNamespace="http://cz.fi.muni.order">
+
+<xs:element name="orderRequest">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="items" type="xs:anyType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="orderResponse">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="created" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

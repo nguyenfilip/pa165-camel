@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inc="http://cz.fi.muni.order">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <inc:orderRequest>
+         <inc:items>
+           <inc:item>Kocka z WS</inc:item>
+         </inc:items>
+      </inc:orderRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

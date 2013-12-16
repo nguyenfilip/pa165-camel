@@ -1,0 +1,4 @@
+<order>
+  <item>Pitomost</item> 
+  <item><product>Skis2</product><quantity>20</quantity></item> 
+</order>

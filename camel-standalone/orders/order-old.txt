@@ -1,0 +1,4 @@
+<order>
+  <item><product>Skis</product><quantity>20</quantity></item> 
+  <item><product>Skis2</product><quantity>20</quantity></item> 
+</order>

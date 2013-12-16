@@ -1,0 +1,1 @@
+curl -H "Content-Type: text/xml" -X POST -d @request.xml http://localhost:8080/camel/order
