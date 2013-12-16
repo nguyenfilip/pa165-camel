@@ -7,7 +7,7 @@ import org.apache.camel.ProducerTemplate;
 
 public class SomeSpringBean {
 
-	@EndpointInject(uri="file://new-orders-input")
+	@EndpointInject(uri="file://new-input-orders")
 	private ProducerTemplate newFileEndpoint;
 	
 	
@@ -15,8 +15,9 @@ public class SomeSpringBean {
 		System.out.println("Some spring bean sending something to a route!! :-)");
 		
 		newFileEndpoint.sendBody("<order><items>"
-		  +"<item><product>Skis</product><quantity>20</quantity></item>"
-		  +"<item><product>Skis2</product><quantity>20</quantity></item> "
+		  +"<item><product>Bean sent ArtificialProduct1</product><quantity>20</quantity></item>"
+		  +"<item><product>Bean sent ArtificialProduct2</product><quantity>20</quantity></item> "
 		  +"</items></order>");
+		
 	}
 }

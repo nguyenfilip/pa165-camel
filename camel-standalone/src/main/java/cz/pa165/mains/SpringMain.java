@@ -11,7 +11,7 @@ public class SpringMain
     public static void main( String[] args ) throws Exception
     {
     	ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext-standalone.xml");
-    	CamelContext camelContext = (CamelContext) context.getBean("mycamelRoute");
+    	CamelContext camelContext = (CamelContext) context.getBean("retailStoreCamelContext");
     	
     	SomeSpringBean ssb = (SomeSpringBean) context.getBean("someSpringBean");
     	ssb.sendSomethingThere();

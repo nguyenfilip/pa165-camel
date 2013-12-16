@@ -31,7 +31,7 @@ public class RetailStoreRoutesTest extends AbstractCamelTestNGSpringContextTests
 		Assert.assertNotNull(newOrdersTemplate);
 	}
 	
-	@Test
+	@Test(timeOut=20000)
 	public void sendOrder() throws Exception{
 		retailStoreCamelContext.getRouteDefinition("commonRoute").adviceWith(retailStoreCamelContext,
 				new AdviceWithRouteBuilder() {

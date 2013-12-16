@@ -12,23 +12,9 @@ import cz.pa165.OrderBean;
 import cz.pa165.processors.JaxbBeanProcessor;
 import cz.pa165.processors.TimeAddingProcessor;
 
-/**
- * Hello World
- * 
- * @author kalaz
- * 
- */
+
 public class StandaloneMain {
 	public static void main(String[] args) throws Exception {
-
-		// JAXBContext context =
-		// JAXBContext.newInstance(OrderBean.class,ItemBean.class);
-		// Unmarshaller m = context.createUnmarshaller();
-		// OrderBean ob = (OrderBean) m.unmarshal(new
-		// File("c:\\data\\pa165-2013\\lab\\camel-standalone\\errored\\order-old.txt"));
-		// System.out.println(ob.getCreated());
-		// System.out.println(ob.getItems().size());
-
 		CamelContext camelContext = new DefaultCamelContext();
 
 		camelContext.addRoutes(new RouteBuilder() {
@@ -49,20 +35,21 @@ public class StandaloneMain {
 						.to("validator:orderSchema.xsd")
 						.unmarshal(jaxb).process(new JaxbBeanProcessor()).marshal(jaxb)
 						.to("file://outputDir");
+				
 			}
 		});
 
 		camelContext.start();
 		ProducerTemplate producer = camelContext.createProducerTemplate();
 		producer.start();
-
+		
 		Endpoint inputDir2 = camelContext
 				.getEndpoint("file://old-input-orders");
 		Exchange fileExchange = inputDir2.createExchange();
 		fileExchange.getIn().setBody("<order><item>xyz</item></order>");
-		fileExchange.getIn()
-				.setHeader("CamelFileName", "myArtificialOrder.txt");
+		fileExchange.getIn().setHeader("CamelFileName", "myArtificialOrder.txt");
 		producer.send(inputDir2, fileExchange);
+		
 		Thread.sleep(30000);
 	}
 
