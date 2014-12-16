@@ -16,7 +16,7 @@ public class SpringMain
     	SomeSpringBean ssb = (SomeSpringBean) context.getBean("someSpringBean");
     	ssb.sendSomethingThere();
     	
-    	Thread.sleep(100000);
+    	Thread.sleep(300000);
     }
 
 	

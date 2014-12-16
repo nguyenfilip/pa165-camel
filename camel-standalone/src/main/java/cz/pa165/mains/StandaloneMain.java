@@ -50,7 +50,7 @@ public class StandaloneMain {
 		fileExchange.getIn().setHeader("CamelFileName", "myArtificialOrder.txt");
 		producer.send(inputDir2, fileExchange);
 		
-		Thread.sleep(30000);
+		Thread.sleep(300000);
 	}
 
 
